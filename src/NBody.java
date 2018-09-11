@@ -70,6 +70,8 @@ public class NBody {
 	public static void main(String[] args) throws FileNotFoundException{
 		double totalTime = 157788000.0;
 		double dt = 25000.0;
+		//double totalTime = 1000000000.0;
+		//double dt = 1000000.0;
 		
 		String fname= "./data/planets.txt";
 		if (args.length > 2) {
@@ -91,22 +93,22 @@ public class NBody {
 			double[] xForces = new double[bodies.length];
 			double[] yForces = new double[bodies.length];
 			
-			// TODO: loop over all bodies, calculate
-			// net forces and store in xforces and yforces
+			// TODO: loop over all bodies, calculate <-- Done!!!
+			// net forces and store in xforces and yforces <-- Done!!!
 			for (int k = 0; k < bodies.length ; k += 1) {
 				xForces[k] = bodies[k].calcNetForceExertedByX(bodies);
 				yForces[k] = bodies[k].calcNetForceExertedByY(bodies);
 			}
 			
-			// TODO: loop over all bodies and call update
-			// with dt and corresponding xforces, yforces values
+			// TODO: loop over all bodies and call update <-- Done!!!
+			// with dt and corresponding xforces, yforces values <-- Done!!!
 			for (int k = 0; k < bodies.length ; k += 1) {
 				bodies[k].update(dt, xForces[k], yForces[k]);
 			}
 			
 			StdDraw.picture(0,0,"images/starfield.jpg");
 			
-			// TODO: loop over all bodies and call draw on each one
+			// TODO: loop over all bodies and call draw on each one <-- Done!!!
 			for (int k = 0; k < bodies.length ; k += 1) {
 				bodies[k].draw();
 			}
